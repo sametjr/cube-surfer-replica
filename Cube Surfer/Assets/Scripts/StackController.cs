@@ -39,6 +39,10 @@ public class StackController : MonoBehaviour
     {
         cubeList.Remove(_cube);
         _cube.transform.parent = null;
+        if(cubeList.Count == 0)
+        {
+            GameObject.FindObjectOfType<UIControl>().LevelFailed();
+        }
         // GameManager.Instance.player.transform.GetChild(1).transform.position -= Vector3.up * GameManager.Instance.cubeWidth;
         // GameManager.Instance.player.transform.position -= Vector3.up * GameManager.Instance.cubeWidth;
         // Destroy(_cube);
